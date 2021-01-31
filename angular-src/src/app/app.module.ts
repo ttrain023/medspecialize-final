@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,11 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateComponent } from './components/create/create.component';
 import { DeleteComponent } from './components/delete/delete.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
+// import { ValidateService } from './service/validate.service';
+// import { FlashMessagesModule } from 'flash-messages-angular';
+// import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
@@ -16,13 +23,20 @@ import { DeleteComponent } from './components/delete/delete.component';
     LoginComponent,
     DashboardComponent,
     CreateComponent,
-    DeleteComponent
+    DeleteComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    // FlashMessagesModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    // ValidateService,
+    // AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
