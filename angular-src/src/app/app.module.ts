@@ -13,7 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'flash-messages-angular';
-// import { AuthService } from './services/auth.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { FlashMessagesModule } from 'flash-messages-angular';
   ],
   providers: [
     ValidateService,
-    // AuthService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
