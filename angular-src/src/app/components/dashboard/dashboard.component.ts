@@ -10,6 +10,8 @@ import { FlashMessagesService } from 'flash-messages-angular';
 })
 export class DashboardComponent implements OnInit {
 
+  user!: any;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -17,6 +19,14 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.authService.getProfile().subscribe(profile => {
+      this.user = (profile as any).user.name;
+    },
+    err => {
+      console.log(err);
+      return false;
+    }
+    );
   }
 
   onLogoutClick(){
