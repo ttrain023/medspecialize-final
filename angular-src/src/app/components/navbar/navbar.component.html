@@ -24,6 +24,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">CONTACT US</a>
         </li>
+        <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]= "{exact: true}">
+          <a class="nav-link" [routerLink]="['/dashboard']">DASHBOARD</a>
+        </li>
+        <li class="nav-item" *ngIf="!authService.loggedIn()">
+          <a class="nav-link" (click)="onLogoutClick()">LOGOUT</a>
+        </li>
       </ul>
     </div>
   </div>
