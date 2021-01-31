@@ -12,7 +12,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { ValidateService } from './services/validate.service';
-// import { FlashMessagesModule } from 'flash-messages-angular';
+import { FlashMessagesModule } from 'flash-messages-angular';
 // import { AuthService } from './services/auth.service';
 
 @NgModule({
@@ -29,7 +29,7 @@ import { ValidateService } from './services/validate.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // FlashMessagesModule.forRoot(),
+    FlashMessagesModule.forRoot(),
   ],
   providers: [
     ValidateService,

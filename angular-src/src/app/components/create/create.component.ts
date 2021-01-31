@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
-// import { AuthService } from '../../service/auth.service';
-// import { FlashMessagesService } from 'flash-messages-angular';
+// import { AuthService } from '../../services/auth.service';
+import { FlashMessagesService } from 'flash-messages-angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private validateService: ValidateService,
-    // private flashMessage: FlashMessagesService,
+    private flashMessage: FlashMessagesService,
     // private authService: AuthService,
     private router: Router,
   ) { }
@@ -34,17 +34,17 @@ export class CreateComponent implements OnInit {
       role: this.role
     }
 
-    console.log(this.email, this.password, this.name, this.role)
+    // console.log(this.email, this.password, this.name, this.role)
 
     // Required Fields
     if(!this.validateService.validateCreate(user)){
-      // this.flashMessage.show('Please fill in all fields', {cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessage.show('Please fill in all fields', {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }else{
 
       // Validate Email
       if(!this.validateService.validateEmail(user.email)){
-        // this.flashMessage.show('Please use valid email', {cssClass: 'alert-danger', timeout: 3000});
+        this.flashMessage.show('Please use valid email', {cssClass: 'alert-danger', timeout: 3000});
         return false;
       }else{
 
