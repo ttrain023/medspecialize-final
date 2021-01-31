@@ -11,7 +11,7 @@ import { CreateComponent } from './components/create/create.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-// import { ValidateService } from './services/validate.service';
+import { ValidateService } from './services/validate.service';
 // import { FlashMessagesModule } from 'flash-messages-angular';
 // import { AuthService } from './services/auth.service';
 
@@ -32,7 +32,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     // FlashMessagesModule.forRoot(),
   ],
   providers: [
-    // ValidateService,
+    ValidateService,
     // AuthService
   ],
   bootstrap: [AppComponent]
