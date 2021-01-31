@@ -9,20 +9,20 @@
         <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]= "{exact: true}">
           <a class="nav-link" [routerLink]="['/']">HOME</a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]= "{exact: true}">
-          <a class="nav-link" [routerLink]="['/create']">ABOUT US</a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">ABOUT US</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CORE FEATURES</a>
+          <a class="nav-link" [routerLink]="['/login']">CORE FEATURES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">SOLUTIONS</a>
+          <a class="nav-link" [routerLink]="['/dashboard']">SOLUTIONS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">WHAT'S NEW</a>
+          <a class="nav-link" [routerLink]="['/profile']">WHAT'S NEW</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CONTACT US</a>
+          <a class="nav-link" [routerLink]="['/']">CONTACT US</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" (click)="onLogoutClick()">Logout</a>
