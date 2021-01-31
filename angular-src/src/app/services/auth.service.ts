@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class AuthService {
   authToken: any;
   user: any;
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient, private router:Router) { }
 
   createUser(user: { email: string; password: String; name: String; role: String; }){
     let headers = new HttpHeaders();
@@ -43,10 +43,11 @@ export class AuthService {
   }
 
   getProfile() {
-    let headers = new HttpHeaders();
     this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.authToken
+    });
     return this.http.get('http://localhost:3000/users/profile', {headers: headers});
   }
 }

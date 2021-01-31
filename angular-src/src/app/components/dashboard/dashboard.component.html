@@ -1,9 +1,4 @@
 <div class="row">
-  <div class="col-sm-4">
-    <button class="btn">
-      <a class="nav-link" (click)="onLogoutClick()">LOGOUT</a>
-    </button>
-  </div>
   <div class="col-lg-10">
     <div *ngIf="user">
       <h2 class="page-header">{{user.name}}</h2>
@@ -11,8 +6,13 @@
         <li class="list-group-item">{{user.email}}</li>
         <li class="list-group-item">Status: {{user.status ? 'Active':'Inactive'}}</li>
         <li class="list-group-item">Role: {{user.role}}</li>
-        <li class="list-group-item">Role: {{user.role}}</li>
       </ul>
     </div>
+  </div>
+
+  <div class="col-sm-4">
+    <button class="btn">
+      <a class="nav-link" (click)="onLogoutClick()">LOGOUT</a>
+    </button>
   </div>
 </div>

@@ -19,8 +19,9 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // this.authService.getProfile();
     this.authService.getProfile().subscribe(profile => {
-      this.user = (profile as any).user.name;
+      this.user = (profile as any).user;
     },
     err => {
       console.log(err);
