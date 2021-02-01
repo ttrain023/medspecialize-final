@@ -14,6 +14,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'flash-messages-angular';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { UpdateComponent } from './components/update/update.component';
+import { DeleteComponent } from './components/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     CreateComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdateComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     ValidateService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

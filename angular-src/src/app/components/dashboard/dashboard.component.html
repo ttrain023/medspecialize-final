@@ -1,12 +1,12 @@
-<div class="row">
-  <div class="col-md-50">
-    <div *ngIf="user">
-      <h2 class="page-header">{{user.name}}</h2>
-      <ul class="list-group">
-        <li class="list-group-item">{{user.email}}</li>
-        <li class="list-group-item">Status: {{user.status ? 'Active':'Inactive'}}</li>
-        <li class="list-group-item">Role: {{user.role}}</li>
-      </ul>
-    </div>
-  </div>
+<div *ngIf="user">
+  <h2 class="page-header">{{user.name}}</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Email: {{user.email}}</li>
+    <li class="list-group-item">Status: {{user.status ? 'Active':'Inactive'}}</li>
+    <li class="list-group-item">Role: {{user.role}}</li>
+    <li class="list-group-item">
+      <Button class="btn btn-danger">Delete</Button>
+      <!-- [routerLink]="['/delete']" -->
+    </li>
+  </ul>
 </div>
