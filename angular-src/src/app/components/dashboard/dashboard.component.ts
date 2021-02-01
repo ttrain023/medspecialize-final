@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.authService.getProfile();
     this.authService.getProfile().subscribe(profile => {
       this.user = (profile as any).user;
     },
@@ -28,5 +27,9 @@ export class DashboardComponent implements OnInit {
       return false;
     }
     );
+  }
+
+  onUpdateSubmit(id: number){
+    this.router.navigate(['/update', id]);
   }
 }

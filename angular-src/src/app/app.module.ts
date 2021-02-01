@@ -10,13 +10,13 @@ import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateComponent } from './components/update/update.component';
+import { DeleteComponent } from './components/delete/delete.component';
 
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'flash-messages-angular';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-import { UpdateComponent } from './components/update/update.component';
-import { DeleteComponent } from './components/delete/delete.component';
 
 @NgModule({
   declarations: [

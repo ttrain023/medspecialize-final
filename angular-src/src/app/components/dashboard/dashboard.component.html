@@ -1,4 +1,4 @@
-<div *ngIf="user">
+<!-- <div *ngIf="user">
   <h2 class="page-header">{{user.name}}</h2>
   <ul class="list-group">
     <li class="list-group-item">Email: {{user.email}}</li>
@@ -6,7 +6,32 @@
     <li class="list-group-item">Role: {{user.role}}</li>
     <li class="list-group-item">
       <Button class="btn btn-danger">Delete</Button>
-      <!-- [routerLink]="['/delete']" -->
     </li>
   </ul>
-</div>
+</div> -->
+
+<h2 class="page-header">Users</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Email Address </th>
+      <th> Name </th>
+      <th> Status </th>
+      <th> Role </th>
+      <th> Actions </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="user">
+      <th> {{user.email}} </th>
+      <th> {{user.name}} </th>
+      <th> {{user.status ? 'Active':'Inactive'}} </th>
+      <th> {{user.role}} </th>
+      <!-- <th> <Button  class="btn btn-info">Edit</Button></th> -->
+      <th> <Button (click)="onUpdateSubmit(user._id)"  class="btn btn-info">Edit</Button> </th>
+      <!-- <th> <Button (click)="onDeleteSubmit(user.id)"  class="btn btn-danger">Delete</Button> </th> -->
+      <th> <Button class="btn btn-danger">Delete</Button></th>
+    </tr>
+  </tbody>
+</table>

@@ -1,4 +1,4 @@
-<div *ngIf="user">
+<!-- <div *ngIf="user">
   <h2 class="page-header">{{user.name}}</h2>
   <ul class="list-group">
     <li class="list-group-item">Email: {{user.email}}</li>
@@ -6,7 +6,29 @@
     <li class="list-group-item">Role: {{user.role}}</li>
     <li class="list-group-item">
       <Button class="btn btn-success">Edit</Button>
-      <!-- [routerLink]="['/edit']" -->
     </li>
   </ul>
+</div> -->
+
+<div class="container">
+  <h2 class="page-header">{{user.name}}</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th> Email Address </th>
+        <th> Status </th>
+        <th> Role </th>
+        <th> Action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="user">
+        <th> {{user.email}} </th>
+        <th> {{user.status ? 'Active':'Inactive'}} </th>
+        <th> {{user.role}} </th>
+        <th> <Button class="btn btn-info">Edit</Button> <!-- [routerLink]="['/update']" --> </th>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
