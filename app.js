@@ -21,7 +21,7 @@ mongoose.connect(config.database,{useNewUrlParser:true, useUnifiedTopology: true
 app.use(bodyParser.json());
 
 // CORS Middleware
-app.use(cors());
+app.use(cors({origin: 'http://localhost:4200'}));
 
 // Passport Middleware
 app.use(passport.initialize());

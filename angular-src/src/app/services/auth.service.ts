@@ -10,6 +10,7 @@ export class AuthService {
 
   authToken: any;
   user: any;
+  userid!: any;
 
   constructor( private http: HttpClient, private router:Router) { }
 
@@ -17,6 +18,11 @@ export class AuthService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/users/create', user, {headers: headers})
+  }
+
+  displayUsers(){
+    let headers = new HttpHeaders();
+    return this.http.get('http://localhost:3000/users/read', {headers: headers})
   }
 
   authenticateEmail(user: { email: string; password: String}){
@@ -56,5 +62,23 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+
+  userCatcher(id: any) {
+    localStorage.setItem('id_number', JSON.stringify(id));
+    this.userid = id;
+  }
+
+  loadID(){
+    const id = localStorage.getItem('id_number');
+    this.userid = id;
+  }
+
+  updateThisUser(user: { email: string; password: String; name: String; role: String; }) {
+    this.loadID();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post('http://localhost:3000/users/update/'+JSON.stringify(this.userid), user, {headers: headers});
   }
 }
